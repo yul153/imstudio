@@ -1,0 +1,713 @@
+@import url(common.css);
+@import url(header.css);
+@import url(footer.css);
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap') format('woff');
+}
+
+
+#wrap {
+  width: 100%;
+}
+
+header,
+section,
+footer {
+  width: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard-Regular';
+}
+
+/* _________________STUDIO */
+
+/* 탭메뉴 */
+.TabMenu {
+  /* border: 1px solid #000; */
+  width: 1400px;
+  margin: auto;
+}
+
+.TabMenu ul {
+  /* border: 1px solid red; */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.TabMenu ul li {
+  /* border: 1px solid #000; */
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 45px;
+}
+
+.TabMenu ul li:first-child {
+  margin-left: 0;
+}
+
+.TabMenu ul li {
+  position: relative;
+}
+
+.TabMenu ul li a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+}
+
+.TabMenu ul li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: #223521;
+  transition: 0.35s;
+}
+
+.TabMenu ul li a:not(.active):hover {
+  color: #666;
+}
+
+.TabMenu ul li a:hover:before {
+  width: 100%;
+}
+
+.TabMenu ul li a.active {
+  color: #43743d;
+  font-weight: 600;
+}
+
+/* 이미지 */
+.slide {
+  /* border: 1px solid blue; */
+  position: relative;
+  width: 1400px;
+  height: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slideImage ul {
+  position: absolute;
+  display: flex;
+}
+
+.slideImage ul li {
+  width: 1400px;
+  height: 700px;
+}
+
+.slideImage ul li img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+/* 이전다음버튼 */
+.slideButton {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slideButton a img:first-child {
+  margin-left: 20px;
+}
+
+.slideButton a img:last-child {
+  margin-right: 20px;
+}
+
+/* 텍스트 */
+.slideText {
+  /* border: 1px solid #000; */
+  width: 1400px;
+  height: auto;
+  margin: auto;
+}
+
+.sText1 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+  padding: 40px 0;
+  border-width: 0 0 2px 0;
+  border-color: rgba(34, 53, 33, 0.5);
+  border-style: solid;
+}
+
+.sTextTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.sText {
+  font-weight: 300;
+  border-width: 0 0 1px 0;
+  border-color: #ccc;
+  border-style: solid;
+  padding: 60px 0;
+}
+
+.sTextLast {
+  border-width: 0;
+}
+
+.sText p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+/* 예약하기 버튼 */
+.slideContent a button {
+  display: block;
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  outline: none;
+  border: none;
+  background-color: rgba(34, 53, 33, 0.8);
+  border-radius: 2px;
+  margin: 0 auto 100px;
+  cursor: pointer;
+}
+
+
+/* _________________GUIDE */
+
+/* 가격안내 */
+.priceImage_list {
+  width: 1400px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.pricetext1 {
+  width: 460px;
+  height: 460px;
+  color: #333;
+  border: 1px solid #223521;
+  padding: 60px 28px 0;
+}
+
+.pricetext1 h5 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.pricetext1 p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 20px 0 0 28px;
+}
+
+.pricetext1 p:nth-of-type(1) {
+  margin-top: 80px;
+}
+
+.pricetext1 p:nth-of-type(2) {
+  line-height: 24px;
+}
+
+.pricetext1>span {
+  float: right;
+  font-size: 18px;
+  color: #666;
+  margin-right: 32px;
+}
+
+.priceImage_list li {
+  /* border: 1px solid #000; */
+  width: 460px;
+  height: 580px;
+  margin: 0 6px 80px 0;
+}
+
+.priceImage_list li:nth-of-type(3),
+.priceImage_list li:nth-of-type(6) {
+  margin-right: 0;
+}
+
+.priceImage {
+  overflow: hidden;
+}
+
+.priceImage a img {
+  width: 460px;
+  height: 460px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.priceImage_list li:hover .priceImage a img {
+  transform: scale(1.1);
+}
+
+/* 텍스트 */
+.priceText {
+  margin: 20px 12px 0;
+}
+
+.priceTextTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.price1 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 12px 0;
+}
+
+.priceTextBottom {
+  float: right;
+}
+
+.priceTextBottom span:nth-child(1) {
+  font-size: 18px;
+  font-weight: 200;
+  font-style: oblique;
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.priceTextBottom span:nth-child(2) {
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 16px;
+  color: #333;
+}
+
+.priceTextBottom p {
+  font-size: 18px;
+  font-weight: 200;
+  color: #666;
+}
+
+/* 이용안내 */
+.useContent {
+  /* border: 1px solid #000; */
+  width: 1400px;
+  height: auto;
+  margin: 100px auto;
+}
+
+.useText {
+  /* border: 1px solid #000; */
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border-bottom: 1px solid #ccc;
+  padding: 0 16px 60px;
+}
+
+.useText1 {
+  width: inherit;
+  height: 710px;
+}
+
+.useTextTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 50px 0 25px;
+}
+
+.useText li {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #555;
+  list-style-type: disc;
+}
+
+/* 이용안내모달창 */
+.useModal {
+  /* border: 1px solid #000; */
+  margin: 12px 0;
+}
+
+.useText .useModal1 {
+  list-style-type: none;
+}
+
+.useText .useModal2 {
+  width: 250px;
+  float: left;
+  list-style-type: none;
+}
+
+.useModalContent {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.useModalImage img {
+  width: 450px;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.useModalImage1 img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.usePop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  overflow: auto;
+  display: none;
+}
+
+.u1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.useModalClose {
+  position: fixed;
+  right: 245px;
+  top: 100px;
+}
+
+.useModalClose img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* _________________GALLERY */
+.subTitle h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 200px auto 100px;
+}
+
+.modaltext {
+  text-align: center;
+}
+
+.modaltext h5 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.modaltext p {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+/* 이미지 */
+.galleryImage_list {
+  /* border: 1px solid #000; */
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.galleryImage_list li {
+  overflow: hidden;
+}
+
+.galleryImage_list li a {
+  width: 600px;
+  height: 400px;
+
+}
+
+.galleryImage_list li a img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.galleryImage_list li:hover a img {
+  transform: scale(1.1);
+}
+
+/* popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  overflow-y: scroll;
+  display: none;
+}
+
+.pop_body {
+  position: relative;
+  width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
+  z-index: 12;
+}
+
+.pop>li {
+  position: absolute;
+  width: 1000px;
+  background-color: #fff;
+  display: none;
+}
+
+.pop>li img {
+  width: inherit;
+  object-fit: cover;
+}
+
+/* 버튼 */
+.modalButton {
+  position: fixed;
+  left: 50%;
+  top: 0px;
+  margin-left: 492px;
+  width: 60px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.modalButton>li {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.modalButton>li:hover {
+  background: #223521;
+}
+
+/* 닫기버튼 */
+.modalButton .mbtn_close {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.modalButton .mbtn_close img {
+  position: relative;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+/* 다음이전버튼 */
+.modalButton .mleft_btn,
+.mright_btn {
+  float: left;
+}
+
+.modalButton .mleft_btn,
+.mright_btn {
+  position: relative;
+  top: 0;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalButton .mleft_btn img,
+.mright_btn img {
+  width: 15px;
+  height: 30px;
+}
+
+.modalButton .m_page {
+  font-size: 14px;
+  color: #fff;
+  width: 60px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  line-height: 10px;
+}
+
+
+/* _________________PHOTOGRAPHER */
+.photographerImage_list {
+  /* border: 1px solid #000; */
+  width: 100%;
+  margin: 0 auto 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+}
+
+.photographerImage_list li {
+  overflow: hidden;
+}
+
+.photographerImage_list li a {
+  width: 400px;
+  height: 600px;
+}
+
+.photographerImage_list li a img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.photographerImage_list li:hover a img {
+  transform: scale(1.1);
+}
+
+.modaltext h5 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* _________________PARTYROOM */
+/* 이미지 */
+.partyRoomList {
+  position: relative;
+}
+
+.partyRoomListContent ul {
+  width: 1400px;
+  height: 1200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  margin: 0 auto 200px;
+}
+
+.partyRoomListContent ul li {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.partyRoomListImage {
+  overflow: hidden;
+}
+
+.partyRoomListImage>a>img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.partyRoomListImage:hover>a>img {
+  transform: scale(1.1);
+}
+
+.partyRoomListHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.partyRoomListHover img {
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.partyRoomListHover h4 {
+  bottom: 20px;
+  left: 30px;
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.partyRoomListImage a:hover img {
+  opacity: 0;
+}
+
+.partyRoomListImage a:hover .partyRoomListHover img {
+  opacity: 1;
+}

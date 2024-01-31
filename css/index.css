@@ -1,0 +1,224 @@
+@import url(common.css);
+@import url(header.css);
+@import url(footer.css);
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+}
+
+
+#wrap {
+  width: 100%;
+}
+
+header,
+section,
+footer {
+  width: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* section */
+.roomList,
+.bottomImageList {
+  position: relative;
+}
+
+.roomListContent ul {
+  width: 1400px;
+  height: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  margin: 200px auto;
+}
+
+.roomListContent ul li {
+  position: relative;
+  overflow: hidden;
+}
+
+.roomListContent ul li:first-child {
+  grid-column: span 2;
+}
+
+.roomListContent ul li:last-child {
+  grid-column: span 2;
+}
+
+.roomListImage img,
+.roomListHoverImage img {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.roomListHoverImage img {
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 11;
+}
+
+.mainDimmed {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 12;
+}
+
+.roomListContent ul li:hover .roomListImage {
+  display: none;
+}
+
+.roomListContent ul li:hover .mainDimmed {
+  opacity: 1;
+}
+
+.roomListContent ul li:hover .roomListHoverImage img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.roomListHoverText {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 13;
+}
+
+.roomListHoverText h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.roomListContent>ul>li:hover .roomListHoverText {
+  opacity: 1;
+}
+
+/* 배너 */
+.bottomImage {
+  /* border: 1px solid #000; */
+  position: relative;
+  width: 1920px;
+  height: 600px;
+  margin: 0 auto 200px;
+  overflow: hidden;
+}
+
+.bottomImage img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  transition: 0.5s;
+  z-index: 13;
+}
+
+.dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 14;
+}
+
+.bottomText h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat';
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  z-index: 15;
+}
+
+.bottomImage:hover>img,
+.dimmer {
+  transform: scale(1.1);
+}
+
+
+/* 하단배너 */
+.bottomBannerList {
+  position: relative;
+  width: 1890px;
+  height: 270px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.bottomBanner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3780px;
+  height: 270px;
+}
+
+.bottomBanner1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1890px;
+  height: 270px;
+  z-index: 16;
+}
+
+.bottomBanner1 li {
+  float: left;
+  width: 270px;
+  height: 270px;
+}
+
+.bottomBanner2 {
+  position: absolute;
+  left: 1890px;
+  top: 0;
+  width: 1890px;
+  height: 270px;
+  z-index: 16;
+}
+
+.bottomBanner2 li {
+  float: left;
+  width: 270px;
+  height: 270px;
+}
+
+.bottomBanner>div>ul>li>a>img {
+  width: 270px;
+  height: inherit;
+  object-fit: cover;
+}
