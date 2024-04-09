@@ -17,7 +17,7 @@
       <nav>
         <h1><a href="index.html"><img src="img/main/logo_n.png" alt="logo" title="Logo"></a></h1>
         <ul class="gnb">
-          <li class="main main1"><a href="reservation.html">reservation</a>
+          <!-- <li class="main main1"><a href="reservation.html">reservation</a></li> -->
           <li class="main"><a href="roomh.html">studio</a>
             <ul class="lnb lnb1">
               <li class="sub"><a href="roomh.html">room h</a></li>
@@ -33,19 +33,19 @@
             </ul>
           </li>
           <li class="main"><a href="gallery.html">gallery</a></li>
-          <li class="main"><a href="Photographer.html">photographer</a>
+          <li class="main"><a href="sphotographer.html">photographer</a>
             <ul class="lnb">
-              <li class="sub"><a href="sPhotographer.html">솔트킴</a></li>
-              <li class="sub"><a href="yPhotographer.html">여니</a></li>
-              <li class="sub"><a href="pPhotographer.html">뽀또</a></li>
+              <li class="sub"><a href="sphotographer.html">솔트킴</a></li>
+              <li class="sub"><a href="yphotographer.html">여니</a></li>
+              <li class="sub"><a href="pphotographer.html">뽀또</a></li>
             </ul>
-          </li>  
-          <li class="main"><a href="partyroom.html">partyroom</a>
+          </li> 
+          <li class="main"><a href="mainPartyroom.html">partyroom</a>
             <ul class="lnb">
-              <li class="sub"><a href="mainpartyroom.html">메인파티룸</a></li>
-              <li class="sub"><a href="moviepartyroom.html">영화관람룸</a></li>
-              <li class="sub"><a href="aphotopartyroom.html">a사진촬영룸</a></li>
-              <li class="sub"><a href="bphotopartyroom.html">b사진촬영룸</a></li>
+              <li class="sub"><a href="mainPartyroom.html">메인파티룸</a></li>
+              <li class="sub"><a href="moviePartyroom.html">영화관람룸</a></li>
+              <li class="sub"><a href="aPartyroom.html">a사진촬영룸</a></li>
+              <li class="sub"><a href="bPartyroom.html">b사진촬영룸</a></li>
 
             </ul>
           </li>    
@@ -57,12 +57,17 @@
 
     <main id="main">
       <div class="mainContent">  
-            <!-- 좌우버튼 -->
-        <div class="mainSideBtn"> 
-          <a class="mainPre" href="#none"><img src="img/main/leftButton.png" alt="left button"></img></a>
-          <a class="mainNex" href="#none"><img src="img/main/rightButton.png" alt="right button"></img></a>
+
+        <!-- 메인이미지 -->
+        <div class="mainImage">
+          <ul>
+            <li><img src="img/main/main1.jpg" alt="roomA image"></li>
+            <li><img src="img/main/main2.jpg" alt="roomC image"></li>
+            <li><img src="img/main/main3.jpg" alt="roomA image"></li>
+            <li><img src="img/main/main4.jpg" alt="roomH image"></li>
+          </ul>
         </div>
-  
+
         <!-- 하단버튼 -->
         <div class="indicator">
           <ul>
@@ -70,23 +75,13 @@
             <li class="indent">02</li>
             <li class="indent">03</li>
             <li class="indent">04</li>
-            <li class="indent">05</li>
-            <li class="indent">06</li>
-            <li class="indent">07</li>
-            <li class="indent">08</li>
           </ul>
         </div>
-        <div class="mainImage">
-          <ul>
-            <li><img src="img/main/main1.jpg" alt="roomA image"></li>
-            <li><img src="img/main/main2.jpg" alt="roomC image"></li>
-            <li><img src="img/main/main3.jpg" alt="roomA image"></li>
-            <li><img src="img/main/main4.jpg" alt="roomH image"></li>
-            <li><img src="img/main/main5.jpg" alt="roomC image"></li>
-            <li><img src="img/main/main6.jpg" alt="roomC image"></li>
-            <li><img src="img/main/main7.jpg" alt="partyroomMain image"></li>
-            <li><img src="img/main/main8.jpg" alt="partyroomMain image"></li>
-          </ul>
+
+        <!-- 좌우버튼 -->
+        <div class="mainSideBtn"> 
+          <img src="img/main/leftButton.png" class="mainPre" alt="left button"></img><!-- 이전보기 -->
+          <img src="img/main/rightButton.png" class="mainNex" alt="right button"></img><!-- 다음보기 -->
         </div>
       </div>
     </main>
@@ -101,8 +96,7 @@
               <a href="roomh.html" class="mainDimmed indent">dimmed</a>
               <a href="roomh.html" class="roomListHoverImage"><img src="img/main/main_room1_hover.jpg" alt="room h hover image"></a>
               <div class="roomListHoverText">
-                <img src="img/main/main_roomlistPlus.png" alt="">
-                <h4>room h</h4>
+                <a href="roomh.html">room h</a>
               </div>
             </li>
             <li>
@@ -110,8 +104,7 @@
               <a href="rooma.html" class="mainDimmed indent">dimmed</a>
               <a href="roomh.html" class="roomListHoverImage"><img src="img/main/main_room2_hover.jpg" alt="room a image"></a>
               <div class="roomListHoverText">
-                <img src="img/main/main_roomlistPlus.png" alt="">
-                <h4>room a</h4>
+                <a href="rooma.html">room a</a>
               </div>
             </li>
             <li>
@@ -119,8 +112,7 @@
               <a href="roomb.html" class="mainDimmed indent">dimmed</a>
               <a href="roomh.html" class="roomListHoverImage"><img src="img/main/main_room3_hover.jpg" alt="room b image"></a>
               <div class="roomListHoverText">
-                <img src="img/main/main_roomlistPlus.png" alt="">
-                <h4>room b</h4>
+                <a href="roomb.html">room b</a>
               </div>
             </li>
             <li>
@@ -128,8 +120,7 @@
               <a href="roomc.html" class="mainDimmed indent">dimmed</a>
               <a href="roomh.html" class="roomListHoverImage"><img src="img/main/main_room4_hover.jpg" alt="room c image"></a>
               <div class="roomListHoverText">
-                <img src="img/main/main_roomlistPlus.png" alt="">
-                <h4>room c</h4>
+                <a href="roomc.html">room c</a>
               </div>
             </li>
           </ul>
@@ -174,8 +165,6 @@
           </div>
         </div>
       </div>
-
-
     </section>
 
     <footer>
@@ -193,10 +182,14 @@
   <script src="js/jquery-3.7.0.min.js"></script>
   <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
   <script src="js/prefixfree.min.js"></script>
+  <script src="js/header.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/sub.js"></script>
+
+
+  <!-- 타이핑스크립트_메인  -->
   <script src="js/typeit.min.js"></script>
   <script>
-      /* 타이핑글자 */
     window.instance = new TypeIt("#typing1", {
       speed: 100
     })

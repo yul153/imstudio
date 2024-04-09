@@ -1,98 +1,58 @@
 $(document).ready(function () {
 
-  /* 서브메뉴 풀다운 */
-  $(".gnb").hover(function () {
-    $(this).find(".lnb").stop().slideDown();
-    $(".lnbBg").stop().slideDown();
-  }, function () {
-    $(this).find(".lnb").stop().slideUp();
-    $(".lnbBg").stop().slideUp();
-  });
-
-  $(".main1").hover(function () {
-    $(this).find(".lnb-reservation").stop().slideDown();
-    $(".lnbBg").stop().slideDown();
-  }, function () {
-    $(this).find(".lnb-reservation").stop().slideUp();
-    $(".lnbBg").stop().slideUp();
-  });
-
-
   /* _______________________studio */
-  let imgon_w = $(".slideImage ul li").width();
-  let imgon_n = $(".slideImage ul li").length;
-  let soldidxon = 0;
-  let sindexon = 0;
+  let $simg = $(".slideImage ul");
+  let $simgli = $(".slideImage ul li");
+  let $snext = $(".slideButton .rbtn");
+  let $spre = $(".slideButton .lbtn");
+  let simg_w = $simgli.width();
+  let simg_n = $simgli.length;
+  let soldidx = 0;
+  let sindex = 0;
 
-  $(".slideImage ul li:last").prependTo(".slideImage ul");
-  $(".slideImage ul").css({ left: -imgon_w });
-
-  function slideonImg(sindexon, m) {
-    if (m == 0) {
-      $(".slideImage ul").stop(true, true).animate({
-        left: "+=" + imgon_w + "px"
-      }, 600, "easeOutCubic", function () {
-        $(".slideImage ul li:last").prependTo(".slideImage ul");
-        $(".slideImage ul").css({ left: -imgon_w });
-      });
-    } else {
-      $(".slideImage ul").stop(true, true).animate({
-        left: "-=" + imgon_w + "px"
-      }, 600, "easeOutCubic", function () {
-        $(".slideImage ul li:first").appendTo(".slideImage ul");
-        $(".slideImage ul").css({ left: -imgon_w });
-      });
-    }
-    soldidxon = sindexon;
+  //index번째 비주얼이미지 이동하는 함수생성
+  function slideImg(sindex) {
+    targetX = -(sindex * simg_w)
+    $simg.stop().animate({ left: targetX }, 600);
+    soldidx = sindex;
   };
 
-  function slideonAuto() {
-    sindexon++;
-    if (sindexon == imgon_n) {
-      sindexon = 0;
+  //자동함수 생성
+  function slideAuto() {
+    sindex++;
+    if (sindex == simg_n) {
+      sindex = 0;
     }
-    slideonImg(sindexon, 1);
+    slideImg(sindex);
   };
-  timeron = setInterval(slideonAuto, 4000);
+  auto = setInterval(slideAuto, 4000);
 
   //좌우버튼
-  $(".rbtn").click(function () {
-    clearInterval(timeron);
-    sindexon++;
-    if (sindexon == imgon_n) {
-      sindexon = 0;
+  $spre.click(function () {
+    clearInterval(auto);
+    sindex--;
+    if (sindex < 0) {
+      sindex = simg_n - 1;
     }
-    slideonImg(sindexon, 1);
-    timeron = setInterval(slideonAuto, 4000);
+    slideImg(sindex);
+    auto = setInterval(slideAuto, 4000);
   });
 
-  $(".lbtn").click(function () {
-    clearInterval(timeron);
-    sindexon--;
-    if (sindexon < 0) {
-      sindexon = imgon_n - 1;
+  $snext.click(function () {
+    clearInterval(auto);
+    sindex++;
+    if (sindex == simg_n) {
+      sindex = 0;
     }
-    slideonImg(sindexon, 0);
-    timeron = setInterval(slideonAuto, 4000);
+    slideImg(sindex);
+    auto = setInterval(slideAuto, 4000);
   });
-
-  //재배치
-  for (let i = 1; i <= imgon_n; i++) {
-    $(".slideImage ul li.i" + i).appendTo(".slideImage ul");
-  }
-  $(".slideImage ul li:last").prependTo(".slideImage ul");
-  $(".slideImage ul li:last").prependTo(".slideImage ul");
-
-  for (let i = 1; i <= sindexon + 1; i++) {
-    slideonImg(sindexon, 1);
-  }
-  timeron = setInterval(slideonAuto, 4000);
 
   //오버시 멈춤
-  $(".slideImage ul li").hover(function () {
-    clearInterval(timeron);
+  $(".slideImage").hover(function () {
+    clearInterval(auto);
   }, function () {
-    timeron = setInterval(slideonAuto, 4000);
+    auto = setInterval(slideAuto, 4000);
   });
 
 
@@ -134,28 +94,54 @@ $(document).ready(function () {
   });
 
   /* _______________________photographer */
-  //각 목록을 클릭했을때
-  $(".photographerImage_list>li").click(function () {
-    g_pop = $(this).index();
-    $(".m_page span:nth-child(1)").text(g_pop + 1);
+  let tab_party = window.location.pathname;
+  $(".tabMenu ul li a[href='" + tab_party + "']").addClass("active");
+
+
+  $(".photographerImage_list li").click(function () {
+    g_pop1 = $(this).index();
+    $(".pm_page span:nth-child(1)").text(g_pop1 + 1);
     $("html").css({ "overflow-y": "hidden" });
-    $(".pop>li").eq(g_pop).show();
-    $(".popup").stop().fadeIn();
+    $(".ppop_body>ul>li").eq(g_pop1).show();
+    $(".ppopup").stop().fadeIn();
   });
 
+  $(".pmleft_btn").click(function () {
+    if (g_pop1 > 0) {
+      $(".ppop_body ul li").eq(g_pop1).stop().fadeOut();
+      g_pop1--;
+      $(".pm_page span:nth-child(1)").text(g_pop1 + 1);
+      $(".ppop_body ul li").eq(g_pop1).stop().fadeIn();
+    };
+  });
 
+  $(".pmright_btn").click(function () {
+    var totalImages = $(".ppop_body ul li").length;
+    if (g_pop1 < totalImages - 1) {
+      $(".ppop_body ul li").eq(g_pop1).stop().fadeOut();
+      g_pop1++;
+      $(".pm_page span:nth-child(1)").text(g_pop1 + 1);
+      $(".ppop_body ul li").eq(g_pop1).stop().fadeIn();
+    };
+  });
 
- /* _______________________Guide */
-/* 이용안내 모달 */
-$(".useModalContent a").click(function(){
-  $(this).next().show();
-  $("html").css({"overflow-y":"hidden"});
-});
+  $(".pmbtn_close").click(function () {
+    $("html").css({ "overflow-y": "scroll" });
+    $(".ppopup").stop().fadeOut();
+    $(".ppop_body ul li").stop().hide();
+  });
 
-$(".useModalClose, .usePop").click(function(){
-  $(".usePop").hide();
-  $("html").css({"overflow-y":"scroll"});
-});
+  /* _______________________Guide */
+  /* 이용안내 모달 */
+  $(".useModalContent a").click(function () {
+    $(this).next().show();
+    $("html").css({ "overflow-y": "hidden" });
+  });
+
+  $(".useModalClose, .usePop").click(function () {
+    $(".usePop").hide();
+    $("html").css({ "overflow-y": "scroll" });
+  });
 
 
 

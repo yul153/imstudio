@@ -2,10 +2,8 @@
 @import url(header.css);
 @import url(footer.css);
 
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* font-family: "Pretendard Variable", sans-serif; */
 
 @font-face {
   font-family: 'Montserrat';
@@ -28,28 +26,30 @@ html {
 }
 
 body {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard Variable", sans-serif;
 }
 
 /* _________________STUDIO */
 
 /* 탭메뉴 */
-.TabMenu {
+.tabMenu {
   /* border: 1px solid #000; */
   width: 1400px;
   margin: auto;
 }
 
-.TabMenu ul {
+.tabMenu ul {
   /* border: 1px solid red; */
   width: auto;
+  border-bottom: 1px solid rgba(34, 53, 33, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
   margin: 50px 0;
 }
 
-.TabMenu ul li {
+.tabMenu ul li {
   /* border: 1px solid #000; */
   font-family: 'Montserrat';
   font-size: 18px;
@@ -58,21 +58,21 @@ body {
   margin-left: 45px;
 }
 
-.TabMenu ul li:first-child {
+.tabMenu ul li:first-child {
   margin-left: 0;
 }
 
-.TabMenu ul li {
+.tabMenu ul li {
   position: relative;
 }
 
-.TabMenu ul li a {
+.tabMenu ul li a {
   font-size: 18px;
   font-weight: 500;
   color: #666;
 }
 
-.TabMenu ul li a:before {
+.tabMenu ul li a:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -84,15 +84,15 @@ body {
   transition: 0.35s;
 }
 
-.TabMenu ul li a:not(.active):hover {
+.tabMenu ul li a:not(.active):hover {
   color: #666;
 }
 
-.TabMenu ul li a:hover:before {
+.tabMenu ul li a:hover:before {
   width: 100%;
 }
 
-.TabMenu ul li a.active {
+.tabMenu ul li a.active {
   color: #43743d;
   font-weight: 600;
 }
@@ -118,8 +118,8 @@ body {
 }
 
 .slideImage ul li img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -135,12 +135,21 @@ body {
   justify-content: space-between;
 }
 
-.slideButton a img:first-child {
-  margin-left: 20px;
+.slideButton li {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px 0;
+  cursor: pointer;
 }
 
-.slideButton a img:last-child {
+.slideButton li img:first-child {
+  margin-left: 20px;
+  object-fit: cover;
+}
+
+.slideButton li img:last-child {
   margin-right: 20px;
+  object-fit: cover;
 }
 
 /* 텍스트 */
@@ -151,20 +160,28 @@ body {
   margin: auto;
 }
 
+.slideContent h6 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 20px;
+  margin: 16px 0;
+  border-top: 1px solid #ccc;
+}
+
 .sText1 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
   text-align: center;
-  padding: 40px 0;
-  border-width: 0 0 2px 0;
-  border-color: rgba(34, 53, 33, 0.5);
-  border-style: solid;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(34, 53, 33, 0.5);
 }
 
 .sTextTitle {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   color: #333;
   margin-bottom: 25px;
 }
@@ -184,6 +201,14 @@ body {
 .sText p {
   margin-bottom: 15px;
   color: #666;
+}
+
+.sText2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #223521;
+  text-align: center;
+  margin: 40px 0;
 }
 
 /* 예약하기 버튼 */
@@ -245,6 +270,7 @@ body {
 .pricetext1>span {
   float: right;
   font-size: 18px;
+  font-weight: 300;
   color: #666;
   margin-right: 32px;
 }
@@ -445,7 +471,7 @@ body {
   color: #333;
   text-align: center;
   text-transform: uppercase;
-  margin: 200px auto 100px;
+  margin: 200px auto 30px;
 }
 
 .modaltext {
@@ -570,11 +596,6 @@ body {
 /* 다음이전버튼 */
 .modalButton .mleft_btn,
 .mright_btn {
-  float: left;
-}
-
-.modalButton .mleft_btn,
-.mright_btn {
   position: relative;
   top: 0;
   width: 30px;
@@ -582,6 +603,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  float: left;
 }
 
 .modalButton .mleft_btn img,
@@ -602,6 +624,22 @@ body {
 
 
 /* _________________PHOTOGRAPHER */
+.sectionIn .subTitle .photos {
+  border-bottom: 1px solid rgba(34, 53, 33, 0.3);
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 0;
+  margin-bottom: 100px;
+}
+
+.modaltext h5 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .photographerImage_list {
   /* border: 1px solid #000; */
   width: 100%;
@@ -611,103 +649,179 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-
 }
 
 .photographerImage_list li {
-  overflow: hidden;
-}
-
-.photographerImage_list li a {
   width: 400px;
   height: 600px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.photographerImage_list li a img {
+.photographerImage_list li img {
   width: inherit;
   height: inherit;
   object-fit: cover;
   transition: 0.5s;
 }
 
-.photographerImage_list li:hover a img {
+.photographerImage_list li:hover img {
   transform: scale(1.1);
 }
 
-.modaltext h5 {
-  font-weight: 600;
-  margin-bottom: 16px;
+
+
+/* 팝업창 */
+.ppopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  overflow-y: scroll;
+  display: none;
+}
+
+.ppop_body {
+  position: relative;
+  width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
+  z-index: 12;
+}
+
+.ppop_body ul li {
+  position: absolute;
+  width: 1000px;
+  background-color: #fff;
+  display: none;
+}
+
+.ppop_body ul li img {
+  width: inherit;
+  object-fit: cover;
+}
+
+/* 버튼 */
+.pmodalButton {
+  position: fixed;
+  left: 50%;
+  top: 0px;
+  margin-left: 492px;
+  width: 60px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.pmodalButton>li {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pmodalButton>li:hover {
+  background: #223521;
+}
+
+/* 닫기버튼 */
+.pmodalButton .pmbtn_close {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.pmodalButton .pmbtn_close img {
+  position: relative;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+/* 다음이전버튼 */
+.pmodalButton .pmleft_btn,
+.pmright_btn {
+  position: relative;
+  top: 0;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.pmodalButton .pmleft_btn img,
+.pmright_btn img {
+  width: 15px;
+  height: 30px;
+}
+
+.pmodalButton .pm_page {
+  font-size: 14px;
+  color: #fff;
+  width: 60px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  line-height: 10px;
 }
 
 /* _________________PARTYROOM */
-/* 이미지 */
-.partyRoomList {
-  position: relative;
-}
-
-.partyRoomListContent ul {
-  width: 1400px;
-  height: 1200px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
-  margin: 0 auto 200px;
-}
-
-.partyRoomListContent ul li {
-  position: relative;
-  overflow: hidden;
-  transition: 0.5s;
-}
-
-.partyRoomListImage {
-  overflow: hidden;
-}
-
-.partyRoomListImage>a>img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.partyRoomListImage:hover>a>img {
-  transform: scale(1.1);
-}
-
-.partyRoomListHover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 600px;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-}
-
-.partyRoomListHover img {
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.partyRoomListHover h4 {
-  bottom: 20px;
-  left: 30px;
-  font-size: 28px;
+/* 메인파티룸 */
+.slideText>a {
+  display: block;
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
   color: #fff;
-  text-transform: uppercase;
-  margin-left: 10px;
+  text-align: center;
+  line-height: 50px;
+  outline: none;
+  border: none;
+  background-color: rgba(34, 53, 33, 0.8);
+  border-radius: 2px;
+  margin: 0 auto 100px;
+  cursor: pointer;
 }
 
-.partyRoomListImage a:hover img {
-  opacity: 0;
+.slideContent table {
+  border: 1px solid #000;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
-.partyRoomListImage a:hover .partyRoomListHover img {
-  opacity: 1;
+.slideContent table tr td {
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  padding-left: 10px;
+}
+
+.slideContent table tr td:first-child,
+.slideContent table tr td:nth-child(2) {
+  width: 33%;
+}
+
+.slideContent table tr:first-child td {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgba(34, 53, 33, 0.2);
+}
+
+.pText1 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+  line-height: 28px;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid rgba(34, 53, 33, 0.5);
 }
