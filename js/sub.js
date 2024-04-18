@@ -78,7 +78,7 @@ $(document).ready(function () {
   });
 
   $(".mright_btn").click(function () {
-    if (g_pop < 14) {
+    if (g_pop < 38) {
       $(".pop>li").eq(g_pop).stop().fadeOut();
       g_pop++;
       $(".m_page span:nth-child(1)").text(g_pop + 1);
